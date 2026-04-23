@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', sans-serif;
+}
+body {
+    background-color: #f0f2f5;
+    background: radial-gradient(circle, #ffffff 0%, #e3e6e8 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url("C:/Users/DELL/Documents/arriere.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+
+}
+/* VENTES DES APPAREILS ELECTRONIQUES */
+.hero {
+    height: 40vh; /* prend 40% de la hauteur de l'ecran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(0,0,0,0.6), rgba(0,0,0,0.6);
+    url( 'background.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    font-family: 'Arial Black',sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #007bff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 50px;
+}
+/* Sections de catégories */
+.category-section h2{
+    margin: 40px 0 20px 20px;
+    font-size: 1.5rem;
+    color: white;
+    text-transform: uppercase;
+    border-left: 5px solid #0707bbff; /* petite barre bleue à gauche pour le style */
+    padding-left: 10px;
+}
+.category-title h2{
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: white;
+    border-left: 5px solid #ff6600;
+    padding-left: 15px;
+}
+/* l'alignement horizontal magique */
+.horizontal-scroll  {
+    display: flex;
+    gap: 20px;
+    overflow: auto; /* permet de defiler horizontalement si besoin */
+    padding: 10px 0;
+    scrollbar-width: thin; /* pour firefox */
+}
+/* cacher la barre de defilement sur chrome/safari pour un look plus pro */
+.horizontal-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 15px;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff rgba(255,255,255,0.1);
+}
+/* style des cartes de marques */
+.brand-card {
+    min-width: 180px; /* taille fixe pour forcer l'alignement horizontal */
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.brand-card:hover  {
+    transform: scale(1.05);
+    border: 1px solid #ff6600;
+}
+.brand-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    padding: 10px;
+background-color: white;    
+}
+.brand-card p {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+/* le flexbox alignement horizontal des logo */
+.brand-wrapper {
+    display: flex;
+    flex-direction: row; /* force l'alignement en ligne */
+    gap: 25px; /*espace entre les cartes */
+    padding: 0 20px;
+}
+/* le conteneur qui contient toutes les marques */
+.container-grid {
+    display: flex; /* active le mode flexible */
+    flex-wrap: wrap; /* permet de passer à la ligne si l'ecran est petit */
+    gap: 20px; /* espace entres les cartes */
+    justify-content: flex-start; /* aligne au debut à gauche */
+    padding: 20px;
+}
+/* style des cartes individuelles */
+.card {
+    width: 160px; /* ajuste la largeur selon les besoins */
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: white;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+height: 160px;
+transition: all 0.3s ease;
+cursor: pointer;
+}
+/* style pour les images à l'interieur des cartes */
+.card img {
+    max-width: 100%;
+    height: 80px;
+    padding: 15px;
+    display: block;
+    margin-bottom: 15px;
+    max-height: 80px;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    background: #fff;
+}
+h2 {
+    display: inline-block;
+    border-left: 5px solid #007bff;
+    padding-left: 15px;
+    margin-left: 20px;
+    font-family: 'poppins','segoe','UI','sans-serif';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.card p{
+    display: none;
+}
+.scroll-container::-webkit-scrollbar{
+height: 6px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.1);
+}
+.btn-contact {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 20px;
+}
+.btn-contact:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+    
+
+

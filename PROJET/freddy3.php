@@ -20,20 +20,12 @@ include 'db.php';
 <div class="brand-wrapper">
 <div class="scroll-container">
             <div class="brand-card">
+                <a href="categorie.php? marque=iphone" style="text-decoration: none; color: inherit;">
                 <img src="images/apple.jpg" alt="APPLE">
                 <p>APPLE</p>
             </div>
             <div class="brand-card">
-                <?php
-                $reqIphone=$pdo->query("SELECT * FROM produits WHERE nom LIKE 'iphone%'");
-                while ($p =$reqIphone->fetch()) : ?>
-                <div class="produit-card">
-                    <img src="images/<?php echo $p ['image_url']; ?>" alt="iphone">
-                    <h3><?php echo $p ['nom']; ?></h3>
-                    <p class="prix"><?php echo number_format ($p['prix'], 0, ',',' '); ?> </p>
-                    <?php endwhile; ?>
-                </div>
-                <img src="C:/xampp/htdocs/images/samsung.jpg" alt="SAMSUNG">
+                <img src="images/samsung.jpg" alt="SAMSUNG">
                 <p>SAMSUNG</p>
             </div>
             <div class="brand-card">
@@ -65,7 +57,7 @@ include 'db.php';
                 <p>VIVO</p>
             </div>
             <div class="brand-card">
-                <img src="simages/honor.jpg" alt="HONOR">
+                <img src="images/honor.jpg" alt="HONOR">
                 <p>HONOR</p>
             </div>
             </div>

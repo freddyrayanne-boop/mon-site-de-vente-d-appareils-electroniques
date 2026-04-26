@@ -1,201 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial Black', sans-serif;
 }
+
+/* =====================================================
+   BODY & ARRIÈRE-PLAN — chemin CORRIGÉ (relatif)
+   ===================================================== */
 body {
-    background-color: #f0f2f5;
-    background: radial-gradient(circle, #ffffff 0%, #e3e6e8 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url("C:/Users/DELL/Documents/arriere.jpg");
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("images/arriere.jpg");        /* ← CHEMIN RELATIF CORRIGÉ */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: white;
+    min-height: 100vh;
+}
 
-}
-/* VENTES DES APPAREILS ELECTRONIQUES */
+/* =====================================================
+   HEADER / HERO
+   ===================================================== */
 .hero {
-    height: 40vh; /* prend 40% de la hauteur de l'ecran */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(0,0,0,0.6), rgba(0,0,0,0.6);
-    url( 'background.jpg');
-    background-size: cover;
-    color: white;
-    text-align: center;
-}
-.hero h1 {
-    font-size: 3rem;
-    letter-spacing: 4px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-    text-align: center;
-    font-family: 'Arial Black',sans-serif;
-    text-transform: uppercase;
-    background: linear-gradient(to right, #007bff, #00ff88);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 50px;
-}
-/* Sections de catégories */
-.category-section h2{
-    margin: 40px 0 20px 20px;
-    font-size: 1.5rem;
-    color: white;
-    text-transform: uppercase;
-    border-left: 5px solid #0707bbff; /* petite barre bleue à gauche pour le style */
-    padding-left: 10px;
-}
-.category-title h2{
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: white;
-    border-left: 5px solid #ff6600;
-    padding-left: 15px;
-}
-/* l'alignement horizontal magique */
-.horizontal-scroll  {
-    display: flex;
-    gap: 20px;
-    overflow: auto; /* permet de defiler horizontalement si besoin */
-    padding: 10px 0;
-    scrollbar-width: thin; /* pour firefox */
-}
-/* cacher la barre de defilement sur chrome/safari pour un look plus pro */
-.horizontal-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-.horizontal-scroll::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 10px;
-}
-.scroll-container {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    gap: 15px;
-    padding: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: #007bff rgba(255,255,255,0.1);
-}
-/* style des cartes de marques */
-.brand-card {
-    min-width: 180px; /* taille fixe pour forcer l'alignement horizontal */
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-.brand-card:hover  {
-    transform: scale(1.05);
-    border: 1px solid #ff6600;
-}
-.brand-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 10px;
-    padding: 10px;
-background-color: white;    
-}
-.brand-card p {
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-/* le flexbox alignement horizontal des logo */
-.brand-wrapper {
-    display: flex;
-    flex-direction: row; /* force l'alignement en ligne */
-    gap: 25px; /*espace entre les cartes */
-    padding: 0 20px;
-}
-/* le conteneur qui contient toutes les marques */
-.container-grid {
-    display: flex; /* active le mode flexible */
-    flex-wrap: wrap; /* permet de passer à la ligne si l'ecran est petit */
-    gap: 20px; /* espace entres les cartes */
-    justify-content: flex-start; /* aligne au debut à gauche */
-    padding: 20px;
-}
-/* style des cartes individuelles */
-.card {
-    width: 160px; /* ajuste la largeur selon les besoins */
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    background: white;
-    background: rgba(255,255,255,0.95);
+    height: 40vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-height: 160px;
-transition: all 0.3s ease;
-cursor: pointer;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* style pour les images à l'interieur des cartes */
-.card img {
-    max-width: 100%;
-    height: 80px;
-    padding: 15px;
-    display: block;
-    margin-bottom: 15px;
-    max-height: 80px;
+
+.hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #007bff, #00e0ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    margin-bottom: 8px;
 }
-.card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
-    background: #fff;
+
+.hero p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-h2 {
+
+/* =====================================================
+   CONTENU PRINCIPAL
+   ===================================================== */
+.content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* =====================================================
+   SECTIONS CATÉGORIES
+   ===================================================== */
+.category-section {
+    margin-top: 50px;
+}
+
+.category-section h2 {
     display: inline-block;
-    border-left: 5px solid #007bff;
-    padding-left: 15px;
-    margin-left: 20px;
-    font-family: 'poppins','segoe','UI','sans-serif';
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #fff;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-left: 4px solid #007bff;
+    padding-left: 14px;
+    margin-bottom: 25px;
 }
-.card p{
-    display: none;
+
+/* =====================================================
+   DÉFILEMENT HORIZONTAL DES MARQUES — CORRIGÉ
+   ===================================================== */
+.brand-wrapper {
+    /* Conteneur simple qui laisse le scroll-container gérer le défilement */
+    width: 100%;
+    overflow: hidden;
 }
-.scroll-container::-webkit-scrollbar{
-height: 6px;
+
+.scroll-container {
+    display: flex;              /* ← FLEX = alignement HORIZONTAL */
+    flex-direction: row;        /* ← Forcé en ligne */
+    flex-wrap: nowrap;          /* ← Pas de retour à la ligne */
+    gap: 16px;
+    overflow-x: auto;           /* ← Barre de défilement horizontale */
+    padding: 10px 4px 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff rgba(255, 255, 255, 0.08);
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 5px;
 }
 .scroll-container::-webkit-scrollbar-thumb {
-    background-color: #007bff;
+    background: #007bff;
     border-radius: 10px;
 }
 .scroll-container::-webkit-scrollbar-track {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.05);
 }
+
+/* =====================================================
+   CARTES DE MARQUES
+   ===================================================== */
+.brand-card {
+    flex: 0 0 auto;             /* ← Ne pas rétrécir / ne pas grandir */
+    min-width: 150px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 18px 14px;
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px) scale(1.04);
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.15);
+}
+
+.brand-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.brand-card p {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Marque cliquable (lien vers page produits) */
+a.brand-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.brand-card .badge-link {
+    font-size: 0.65rem;
+    background: #007bff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   GRILLE ORDINATEURS (flex-wrap)
+   ===================================================== */
+.container-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 4px;
+}
+
+.container-grid .brand-card {
+    min-width: 140px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons span {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   UTILITAIRES
+   ===================================================== */
 .btn-contact {
     display: inline-block;
-    padding: 12px 25px;
-    background: #007bff;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
     text-decoration: none;
     border-radius: 30px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: 0.3s;
     margin: 20px;
 }
+
 .btn-contact:hover {
-    background: #0056b3;
-    transform: scale(1.1);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
+<<<<<<< HEAD
 .gamme-section {
     margin-bottom: 50px;
     padding: O 20px;
@@ -240,3 +287,5 @@ height: 6px;
     
 
 
+=======
+>>>>>>> dab0a4341f82a117dc92ee54556f6a7e4e9c6609

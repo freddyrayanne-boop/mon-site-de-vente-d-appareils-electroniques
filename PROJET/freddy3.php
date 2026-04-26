@@ -1,3 +1,6 @@
+<?php
+include 'db.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,6 +24,15 @@
                 <p>APPLE</p>
             </div>
             <div class="brand-card">
+                <?php
+                $reqIphone=$pdo->query("SELECT * FROM produits WHERE nom LIKE 'iphone%'");
+                while ($p =$reqIphone->fetch()) : ?>
+                <div class="produit-card">
+                    <img src="images/<?php echo $p ['iphone_11.jpg']; ?>" alt="iphone 11">
+                    <h3><?php echo $p ['iphone 11']; ?></h3>
+                    <p class="prix"><?php echo number_format( float $number , int $decimals = 0 ,['prix'], 0,) </p>
+                    <?php endwhile; ?>
+                </div>
                 <img src="C:/xampp/htdocs/images/samsung.jpg" alt="SAMSUNG">
                 <p>SAMSUNG</p>
             </div>

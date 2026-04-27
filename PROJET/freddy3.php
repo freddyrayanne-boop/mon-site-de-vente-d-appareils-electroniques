@@ -38,20 +38,28 @@ include 'db.php';
                         <img src="images/apple.jpg" alt="Apple">
                         <p>Apple</p>
                         <span class="badge-link">Voir →</span>
-                    </a>
+</a>
 
                     <!-- Samsung — chemin image CORRIGÉ -->
                     <div class="brand-card">
+                        
                         <img src="images/samsung.jpg" alt="Samsung">
+                        
                         <p>Samsung</p>
+                        
+                        
                     </div>
 
                     <div class="brand-card">
+                        <a href="xiaomi_produits.php" class="brand-card" title="Voir les produits xiaomi">
                         <img src="images/xiaomi.jpg" alt="Xiaomi">
                         <p>Xiaomi</p>
+                        <span class="badge-link">Voir →</span>
+                        </a>
                     </div>
 
                     <div class="brand-card">
+                        
                         <img src="images/pixel.jpg" alt="Google Pixel">
                         <p>Google Pixel</p>
                     </div>

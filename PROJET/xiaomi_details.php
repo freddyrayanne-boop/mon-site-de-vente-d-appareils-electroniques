@@ -13,11 +13,11 @@
 // Chaque entrée : nom, image (dans /images/), prix, specs, video, slug
 $catalogue = [
 
-    'iphone_6' => [
-        'nom'        => 'iPhone 6',
-        'sous_titre' => 'Apple · iOS 12 · Un classique abordable',
+    'redmi_9A' => [
+        'nom'        => 'redmi 9A',
+        'sous_titre' => 'xiaomi ·  · Un classique abordable',
         'prix'       => '55 000',
-        'image'      => 'iphone6.jpg',   // nom réel du fichier
+        'image'      => 'redmi9A.jpg',   // nom réel du fichier
         'video'      => '',               // pas de vidéo pour ce modèle
         'specs'      => [
             ['icon' => 'fa-display',          'label' => 'Écran',         'val' => '4,7" IPS LCD Retina · 1334×750 px'],
@@ -31,11 +31,11 @@ $catalogue = [
         ],
     ],
 
-    'iphone_7' => [
-        'nom'        => 'iPhone 7',
-        'sous_titre' => 'Apple · iOS 15 · Résistant à l\'eau IP67',
-        'prix'       => '65 000',
-        'image'      => 'iphone7.jpg',
+    'redmi_12' => [
+        'nom'        => 'redmi 12',
+        'sous_titre' => 'xiaomi · iOS 15 · Résistant à l\'eau IP67',
+        'prix'       => '105000',
+        'image'      => 'redmi12.jpg',
         'video'      => '',
         'specs'      => [
             ['icon' => 'fa-display',          'label' => 'Écran',         'val' => '4,7" IPS LCD Retina · 1334×750 px'],
@@ -49,12 +49,12 @@ $catalogue = [
         ],
     ],
 
-    'iphone_8' => [
-        'nom'        => 'iPhone 8',
-        'sous_titre' => 'Apple · iOS 16 · Charge sans fil Qi',
-        'prix'       => '80 000',
-        'image'      => 'iphone8.jpg',
-        'video'      => '',
+    'redmi_13' => [
+        'nom'        => 'redmi 13',
+        'sous_titre' => 'xiaomi · iOS 16 · Charge sans fil Qi',
+        'prix'       => '125 000',
+        'image'      => 'redmi13.jpg',
+        'video'      => 'redmi13C.mp4',
         'specs'      => [
             ['icon' => 'fa-display',          'label' => 'Écran',         'val' => '4,7" IPS LCD Retina · 1334×750 px'],
             ['icon' => 'fa-microchip',        'label' => 'Processeur',    'val' => 'Apple A11 Bionic (10 nm)'],
@@ -302,10 +302,10 @@ $p = $catalogue[$model]; // raccourci
 
     <!-- Navigation -->
     <div class="nav-top">
-        <a href="apple_produits.php" class="back-btn"><i class="fa fa-arrow-left"></i> Retour Apple</a>
+        <a href="xiaomi_produits.php" class="back-btn"><i class="fa fa-arrow-left"></i> Retour xiaomi</a>
         <span class="breadcrumb">
             <a href="freddy3.php">Accueil</a> &rsaquo;
-            <a href="apple_produits.php">Apple</a> &rsaquo;
+            <a href="xiaomi_produits.php">xiaomi</a> &rsaquo;
             <?php echo htmlspecialchars($p['nom']); ?>
         </span>
     </div>
@@ -324,7 +324,7 @@ $p = $catalogue[$model]; // raccourci
         <div class="photo-panel">
             <img src="images/<?php echo rawurlencode($p['image']); ?>"
                  alt="<?php echo htmlspecialchars($p['nom']); ?>"
-                 onerror="this.src='images/apple.jpg'">
+                 onerror="this.src='images/xiaomi.jpg'">
         </div>
 
         <!-- Spécifications dynamiques -->

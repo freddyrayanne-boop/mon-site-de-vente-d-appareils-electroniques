@@ -4,46 +4,58 @@ include 'db.php';
 // Produits statiques — image_url avec urlencode() pour les espaces
 $produits = [
     [
-        'nom'       => 'iPhone 6',
-        'image_url' => 'iphone6.jpg',
-        'prix'      => 55000,
-        'model'     => 'iphone_6',
+        'nom'       => 'redmi 9A',
+        'image_url' => 'redmi9A.jpg',
+        'prix'      => 115000,
+        'model'     => 'redmi_9A',
     ],
     [
-        'nom'       => 'iPhone 7',
-        'image_url' => 'iphone7.jpg',
-        'prix'      => 65000,
-        'model'     => 'iphone_7',
+        'nom'       => 'redmi 13',
+        'image_url' => 'redmi13.jpg',
+        'prix'      => 125000,
+        'model'     => 'redmi_13',
     ],
     [
-        'nom'       => 'iPhone 8',
-        'image_url' => 'iphone8.jpg',
-        'prix'      => 80000,
-        'model'     => 'iphone_8',
+        'nom'       => 'redmi 12',
+        'image_url' => 'redmi12.jpg',
+        'prix'      => 105000,
+        'model'     => 'redmi_12',
     ],
     [
-        'nom'       => 'iPhone XR',
-        'image_url' => 'XR.jpg',
-        'prix'      => 120000,
-        'model'     => 'iphone_xr',
+        'nom'       => 'redmi note 14',
+        'image_url' => 'redminote14.jpg',
+        'prix'      => 175000,
+        'model'     => 'redmi_note_14',
     ],
     [
-        'nom'       => 'iPhone 11',
-        'image_url' => 'iphone11.jpg',
-        'prix'      => 145000,
-        'model'     => 'iphone_11',
+        'nom'       => 'redmi 14C',
+        'image_url' => 'redmi14C.jpg',
+        'prix'      => 115000,
+        'model'     => 'redmi_14C',
     ],
-];
+[
+        'nom'       => 'redmi 15',
+        'image_url' => 'redmi15.jpg',
+        'prix'      => 140000,
+        'model'     => 'redmi_15',
+    ],
+    [
+        'nom'       => 'redmi A5',
+        'image_url' => 'redmiA5.jpg',
+        'prix'      => 140000,
+        'model'     => 'redmi_A5',
+    ];
+
 
 // Si la BD est disponible, on tente de compléter les prix
 try {
-    $req = $pdo->query("SELECT * FROM produits WHERE nom LIKE '%iphone%' OR nom LIKE '%iPhone%'");
+    $req = $pdo->query("SELECT * FROM produits WHERE nom LIKE '%redmi%' OR nom LIKE '%redmi%'");
     $rows = $req->fetchAll(PDO::FETCH_ASSOC);
     if (!empty($rows)) {
         // Met à jour les prix depuis la BD
         foreach ($produits as &$p) {
             foreach ($rows as $row) {
-                if (stripos($row['nom'], str_replace('iPhone ', '', $p['nom'])) !== false) {
+                if (stripos($row['nom'], str_replace('redmi ', '', $p['nom'])) !== false) {
                     $p['prix'] = $row['prix'];
                 }
             }
@@ -59,7 +71,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple — Catalogue iPhones | TechStore</title>
+    <title>xiaomi — Catalogue xiaomi | TechStore</title>
     <link rel="stylesheet" href="freddy4.css">
     <style>
         .page-header {
@@ -190,8 +202,8 @@ try {
 <div class="page-header">
     <a href="freddy3.php" class="back-btn">← Retour</a>
     <div class="page-title">
-        <img src="images/apple.jpg" alt="Apple">
-        <h1>Apple</h1>
+        <img src="images/xiaomi.jpg" alt="Xiaomi">
+        <h1>XIAOMI</h1>
     </div>
 </div>
 
@@ -203,7 +215,7 @@ try {
            Lien vers iphone_detail.php avec le paramètre ?model=xxx
            Chaque iPhone ouvre SA propre fiche, pas forcément XR
            ──────────────────────────────────────────────────────── */
-        $lien      = 'iphone_detail.php?model=' . urlencode($p['model']);
+        $lien      = 'xiaomi_detail.php?model=' . urlencode($p['model']);
 
         /* URL-encode le nom de fichier pour gérer les espaces
            "iphone 6.jpg" → "iphone%206.jpg" dans le src            */
@@ -215,7 +227,7 @@ try {
         <div class="img-wrap">
             <img src="<?php echo $img_src; ?>"
                  alt="<?php echo htmlspecialchars($p['nom']); ?>"
-                 onerror="this.src='images/apple.jpg'">
+                 onerror="this.src='images/xiaomi.jpg'">
         </div>
         <div class="card-info">
             <span class="card-nom"><?php echo htmlspecialchars($p['nom']); ?></span>
